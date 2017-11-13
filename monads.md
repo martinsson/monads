@@ -1,15 +1,17 @@
+class: center, middle
 # Real life Monads
 
 --
 On en fait déjà
 
 --
-- Promise
-- Optional
+Promise, Optional, ...
 
 ---
 ## Railway oriented programming
 .left[![Center-aligned image](Recipe_Railway_Transparent.png)]
+
+### On débranche afin de laisser le reste du code rectiligne
 
 ---
 ## Maybe (Optional)
@@ -19,6 +21,7 @@ Chouette, supprime les
 if (value == null) {
 }
 ``` 
+--
 
 ```Java
 Project foundProject = projects.values().stream()
@@ -31,6 +34,7 @@ if (foundProject == null) {
     foundProject.setDone(taskId, taskMarker, display)    
 }
 
+// Maybe::orElse even for side effects with Runnable
 projects.values().stream()
 		.filter(project -> project.hasTask(taskId))
 		.findFirst()
