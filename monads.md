@@ -5,6 +5,7 @@ class: center, middle
 On en fait déjà
 
 --
+
 Promise, Optional, ...
 
 ---
@@ -95,6 +96,5 @@ http://www.vavr.io/
 Monet js
 
 ---
-## Free monads (plus avancé)
-- http://blog.leifbattermann.de/2016/12/25/purity-in-an-impure-language-free-monad-tic-tac-toe-cqrs-event-souring/
-- https://underscore.io/blog/posts/2015/04/14/free-monads-are-simple.html
+## Solution js
+https://gist.github.com/martinsson/0cc9c06f87357581bfcb24a293978926
