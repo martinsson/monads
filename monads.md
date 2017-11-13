@@ -8,7 +8,8 @@ On en fait déjà
 - Optional
 
 ---
-## Railway
+## Railway oriented programming
+.left[![Center-aligned image](Recipe_Railway_Transparent.png)]
 
 ---
 ## Maybe (Optional)
@@ -19,13 +20,45 @@ if (value == null) {
 }
 ``` 
 
+```Java
+Project foundProject = projects.values().stream()
+    .filter(project -> project.hasTask(taskId))
+    .findFirst().get();
+
+if (foundProject == null) {
+    display.taskNotFound(taskId)
+} else {
+    foundProject.setDone(taskId, taskMarker, display)    
+}
+
+projects.values().stream()
+		.filter(project -> project.hasTask(taskId))
+		.findFirst()
+		.<Runnable>map(project -> () -> project.setDone(taskId, taskMarker, display))
+		.orElse(() -> display.taskNotFound(taskId))
+		.run();
+```
+
 ---
 ## Either (Promise)
-Le Left est un peu comme n'importe quel throws
+Cool, mais le "Left" est un peu comme n'importe quel throws, avec plus de syntaxe...
+
+``` javascript
+Promise.reject()
+   .catch(e => ...)
+```
 
 ---
 ## Continuation (Promise, Future)
 
+```javascript
+Const promise = callToWebService()
+promise.then(doSomething)
+       .then(val => {
+          // some code here
+       })
+
+```
 ---
 ## Autres monades
 - Free
